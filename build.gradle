@@ -1,0 +1,64 @@
+apply from: "config.gradle"
+
+group rootProject.ext.app.group
+version rootProject.ext.app.version
+
+buildscript {
+    ext {
+        springBootVersion = "1.5.3.RELEASE"
+        springCloudVersion = "Dalston.SR1"
+        springCloudZookeeperVersion = "1.1.1.RELEASE"
+        springCloudServicesVersion = "1.5.0.RELEASE"
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/plugins-release" }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+subprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    configurations {
+        all*.exclude group: 'commons-logging', module: 'commons-logging'
+        all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+
+        provided
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/libs-release" }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"
+            mavenBom "org.springframework.cloud:spring-cloud-zookeeper-dependencies:$springCloudZookeeperVersion"
+            mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:$springCloudServicesVersion"
+        }
+    }
+
+    dependencies {
+        compile rootProject.ext.dependencies['lombok'],
+                rootProject.ext.dependencies['spring-core'],
+                rootProject.ext.dependencies['spring-context'],
+                rootProject.ext.dependencies['spring-beans'],
+                rootProject.ext.dependencies['spring-cloud-starter-config']
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}
