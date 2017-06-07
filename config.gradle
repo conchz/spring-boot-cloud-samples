@@ -19,7 +19,13 @@ ext {
             "spring-boot-starter-actuator": "org.springframework.boot:spring-boot-starter-actuator",
 
             "spring-cloud-starter-config":
-                    "org.springframework.cloud:spring-cloud-starter-config:$springCloudStarterConfigVersion",
+                    "org.springframework.cloud:spring-cloud-starter-config:$springCloudVersion",
+            "spring-cloud-starter-feign":
+                    "org.springframework.cloud:spring-cloud-starter-feign:$springCloudVersion",
+            "spring-cloud-starter-hystrix":
+                    "org.springframework.cloud:spring-cloud-starter-hystrix:$springCloudVersion",
+            "spring-cloud-starter-hystrix-dashboard":
+                    "org.springframework.cloud:spring-cloud-starter-hystrix-dashboard:$springCloudVersion",
             "spring-cloud-starter-zookeeper-all":
                     "org.springframework.cloud:spring-cloud-starter-zookeeper-all:$springCloudZookeeperVersion",
             "spring-cloud-services-starter-config-client":
