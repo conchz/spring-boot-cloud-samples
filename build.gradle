@@ -5,8 +5,10 @@ version rootProject.ext.app.version
 
 buildscript {
     ext {
+        springVersion = "4.3.8.RELEASE"
         springBootVersion = "1.5.3.RELEASE"
         springCloudVersion = "Dalston.SR1"
+        springCloudStarterConfigVersion = "1.3.1.RELEASE"
         springCloudZookeeperVersion = "1.1.1.RELEASE"
         springCloudServicesVersion = "1.5.0.RELEASE"
     }
@@ -41,6 +43,8 @@ subprojects {
         maven { url "https://repo.spring.io/libs-release" }
     }
 
+    // https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html
+    // https://docs.gradle.org/current/userguide/dependency_management.html
     dependencyManagement {
         imports {
             mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
@@ -57,8 +61,4 @@ subprojects {
                 rootProject.ext.dependencies['spring-beans'],
                 rootProject.ext.dependencies['spring-cloud-starter-config']
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
 }

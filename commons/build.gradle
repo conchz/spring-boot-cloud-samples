@@ -1,0 +1,6 @@
+dependencies {
+    compile rootProject.ext.dependencies['guava'],
+            rootProject.ext.dependencies['jackson-databind'],
+            rootProject.ext.dependencies['jackson-annotations'],
+            rootProject.ext.dependencies['jackson-datatype-jsr310']
+}
