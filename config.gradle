@@ -18,6 +18,10 @@ ext {
             "spring-boot-starter-jetty": "org.springframework.boot:spring-boot-starter-jetty",
             "spring-boot-starter-actuator": "org.springframework.boot:spring-boot-starter-actuator",
 
+            "spring-cloud-config-server":
+                    "org.springframework.cloud:spring-cloud-config-server:$springCloudVersion",
+            "spring-cloud-config-client":
+                    "org.springframework.cloud:spring-cloud-config-client:$springCloudVersion",
             "spring-cloud-starter-config":
                     "org.springframework.cloud:spring-cloud-starter-config:$springCloudVersion",
             "spring-cloud-starter-feign":
@@ -26,12 +30,12 @@ ext {
                     "org.springframework.cloud:spring-cloud-starter-hystrix:$springCloudVersion",
             "spring-cloud-starter-hystrix-dashboard":
                     "org.springframework.cloud:spring-cloud-starter-hystrix-dashboard:$springCloudVersion",
-            "spring-cloud-starter-zookeeper-all":
-                    "org.springframework.cloud:spring-cloud-starter-zookeeper-all:$springCloudZookeeperVersion",
+            "spring-cloud-starter-consul-all":
+                    "org.springframework.cloud:spring-cloud-starter-consul-all",
             "spring-cloud-services-starter-config-client":
-                    "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client:$springCloudServicesVersion",
+                    "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client",
             "spring-cloud-services-starter-service-registry":
-                    "io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry:$springCloudServicesVersion",
+                    "io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry",
 
             "jackson-databind": "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
             "jackson-annotations": "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion",

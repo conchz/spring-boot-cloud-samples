@@ -1,0 +1,10 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile project(':commons'),
+            rootProject.ext.dependencies['spring-boot-starter-web'],
+            rootProject.ext.dependencies['spring-boot-starter-jetty'],
+            rootProject.ext.dependencies['spring-boot-starter-actuator'],
+            rootProject.ext.dependencies['spring-cloud-config-server'],
+            rootProject.ext.dependencies['spring-cloud-services-starter-config-client']
+}

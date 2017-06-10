@@ -2,10 +2,10 @@ apply plugin: 'org.springframework.boot'
 
 dependencies {
     compile project(':commons'),
-            rootProject.ext.dependencies['spring-boot-starter-web'],
+            rootProject.ext.dependencies['spring-boot-starter-actuator'],
             rootProject.ext.dependencies['spring-boot-starter-jetty'],
             rootProject.ext.dependencies['spring-cloud-starter-feign'],
             rootProject.ext.dependencies['spring-cloud-starter-hystrix'],
             rootProject.ext.dependencies['spring-cloud-starter-hystrix-dashboard'],
-            rootProject.ext.dependencies['spring-cloud-starter-zookeeper-all']
+            rootProject.ext.dependencies['spring-cloud-starter-consul-all']
 }
