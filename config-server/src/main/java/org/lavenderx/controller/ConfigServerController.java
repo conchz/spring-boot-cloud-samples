@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-public class ConfigServerController {
+public class ConfigServerController extends BaseController {
 
     @RequestMapping("/jetty-service1/{profile}/{label}")
     public ResponseEntity<Environment> service1(@PathVariable String profile, @PathVariable String label) {
