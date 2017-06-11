@@ -1,7 +1,6 @@
 package org.lavenderx.config.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.config.client.ConfigClientProperties;
 import org.springframework.cloud.config.client.ConfigServicePropertySourceLocator;
 import org.springframework.context.annotation.Bean;
@@ -22,15 +21,6 @@ import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 @Configuration
 public class CustomConfigServiceBootstrapConfiguration {
 
-    @Value("${spring.application.name:application}")
-    private String name;
-    @Value("${spring.cloud.config.uri}")
-    private String uri;
-    @Value("${spring.cloud.config.username}")
-    private String username;
-    @Value("${spring.cloud.config.password}")
-    private String password;
-
     @Autowired
     private Environment environment;
 
@@ -38,14 +28,6 @@ public class CustomConfigServiceBootstrapConfiguration {
     public ConfigClientProperties configClientProperties() {
         ConfigClientProperties client = new ConfigClientProperties(this.environment);
         client.setEnabled(false);
-        client.setName(name);
-        client.setUri(uri);
-        client.setUsername(username);
-        client.setPassword(password);
-
-        ConfigClientProperties.Discovery discovery = new ConfigClientProperties.Discovery();
-        discovery.setEnabled(true);
-        client.setDiscovery(discovery);
 
         return client;
     }
