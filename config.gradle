@@ -24,6 +24,8 @@ ext {
                     "org.springframework.cloud:spring-cloud-config-client:$springCloudVersion",
             "spring-cloud-starter-config":
                     "org.springframework.cloud:spring-cloud-starter-config:$springCloudVersion",
+            "spring-cloud-starter-bus-amqp":
+                    "org.springframework.cloud:spring-cloud-starter-bus-amqp:$springCloudVersion",
             "spring-cloud-starter-feign":
                     "org.springframework.cloud:spring-cloud-starter-feign:$springCloudVersion",
             "spring-cloud-starter-hystrix":
