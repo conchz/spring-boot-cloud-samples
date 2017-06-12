@@ -1,7 +1,7 @@
 ext {
     jacksonVersion = "2.8.8"
-    lombokVersion = "1.16.14"
-    guavaVersion = "18.0"
+    lombokVersion = "1.16.16"
+    guavaVersion = "22.0"
 
     app = [
             group: "org.lavenderx",
@@ -45,6 +45,7 @@ ext {
 
             "junit": "junit:junit:4.12",
             "spring-test": "org.springframework:spring-test:$springVersion",
-            "spring-boot-test": "org.springframework.boot:spring-boot-test"
+            "spring-boot-test": "org.springframework.boot:spring-boot-test",
+            "spring-boot-starter-test": "org.springframework.boot:spring-boot-starter-test"
     ]
 }

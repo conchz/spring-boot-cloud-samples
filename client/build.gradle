@@ -4,6 +4,7 @@ dependencies {
     compile project(':commons'),
             rootProject.ext.dependencies['spring-boot-starter-actuator'],
             rootProject.ext.dependencies['spring-boot-starter-jetty'],
+            rootProject.ext.dependencies['spring-cloud-starter-config'],
             rootProject.ext.dependencies['spring-cloud-starter-feign'],
             rootProject.ext.dependencies['spring-cloud-starter-hystrix'],
             rootProject.ext.dependencies['spring-cloud-starter-hystrix-dashboard'],

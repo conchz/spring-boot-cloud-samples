@@ -59,7 +59,6 @@ subprojects {
         compile rootProject.ext.dependencies['lombok'],
                 rootProject.ext.dependencies['spring-core'],
                 rootProject.ext.dependencies['spring-context'],
-                rootProject.ext.dependencies['spring-beans'],
-                rootProject.ext.dependencies['spring-cloud-starter-config']
+                rootProject.ext.dependencies['spring-beans']
     }
 }
