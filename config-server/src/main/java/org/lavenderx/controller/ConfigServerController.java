@@ -2,8 +2,11 @@ package org.lavenderx.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.config.environment.Environment;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,30 +14,22 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class ConfigServerController extends BaseController {
 
-    @RequestMapping("/jetty-service1/{profile}/{label}")
-    public ResponseEntity<Environment> service1(@PathVariable String profile, @PathVariable String label) {
-        Environment env = new Environment("jetty-service1", profile);
-        env.setLabel(label);
-        env.setVersion("V1");
+    @GetMapping(path = "/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<String> index() {
+        String content = "{\"status\": \"UP\"}";
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
 
-        return ResponseEntity.ok(env);
+        return new ResponseEntity<>(content, responseHeaders, HttpStatus.OK);
     }
 
-    @RequestMapping("/jetty-service2/{profile}/{label}")
-    public ResponseEntity<Environment> service2(@PathVariable String profile, @PathVariable String label) {
-        Environment env = new Environment("jetty-service2", profile);
-        env.setLabel(label);
-        env.setVersion("V1");
-
-        return ResponseEntity.ok(env);
+    @RequestMapping("/service")
+    public ResponseEntity<String> service() {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Forbidden");
     }
 
-    @RequestMapping("/jetty-client1/{profile}/{label}")
-    public ResponseEntity<Environment> client1(@PathVariable String profile, @PathVariable String label) {
-        Environment env = new Environment("jetty-client1", profile);
-        env.setLabel(label);
-        env.setVersion("V1");
-
-        return ResponseEntity.ok(env);
+    @RequestMapping("/client")
+    public ResponseEntity<String> client() {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Forbidden");
     }
 }
