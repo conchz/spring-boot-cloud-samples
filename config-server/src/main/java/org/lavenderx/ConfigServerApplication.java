@@ -8,7 +8,6 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.event.GenericApplicationListener;
 import org.springframework.core.ResolvableType;
-//import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 @SpringBootApplication
 @EnableConfigServer

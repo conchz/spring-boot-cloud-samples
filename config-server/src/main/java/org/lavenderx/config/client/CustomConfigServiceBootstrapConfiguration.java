@@ -28,6 +28,7 @@ public class CustomConfigServiceBootstrapConfiguration {
     public ConfigClientProperties configClientProperties() {
         ConfigClientProperties client = new ConfigClientProperties(this.environment);
         client.setEnabled(false);
+        client.getDiscovery().setEnabled(true);
 
         return client;
     }
